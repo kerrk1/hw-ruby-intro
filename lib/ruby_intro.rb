@@ -3,17 +3,33 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
-  return 0
+  return 0 unless arr != []
+  total = 0
+	arr.each do |x|
+		total = total + x
+	end
+	return total
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  return 0 unless arr != []
+  if arr.length == 1
+    return arr[0]
+  end
+  arr.sort!
+  arr.reverse!
+  total = arr[0]+arr[1]
+  return total
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  return false if arr == []
+  return false if arr.length == 1
+  arr.permutation(2).to_a.each do |pair|
+	  return true if sum(pair) == n
+	end
 end
+
 
 # Part 2
 
