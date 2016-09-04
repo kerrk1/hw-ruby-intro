@@ -26,8 +26,10 @@ def sum_to_n? arr, n
   return false if arr == []
   return false if arr.length == 1
   arr.permutation(2).to_a.each do |pair|
-	  return true if sum(pair) == n
+	  total = pair[0]+pair[1]
+	  return true if total == n
 	end
+	return false
 end
 
 
