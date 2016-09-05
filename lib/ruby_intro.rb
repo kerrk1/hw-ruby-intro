@@ -50,7 +50,8 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
-  if /^[01]/.match(s)
+  return false if s == ''
+  if /[^01]/.match(s).nil?
     binary = s.to_i(2)
     return true if binary%4 == 0
   end
